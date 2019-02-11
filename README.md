@@ -28,3 +28,9 @@ cat local.crt local-ca.crt > local.pem
 * For Chome under Linux try  https://chromium.googlesource.com/chromium/src/+/master/docs/linux_cert_management.md
 * * `sudo apt-get install libnss3-tools`
 * * `certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n local-ca -i local-ca.crt`
+
+## Download current generated certificate (from github)
+
+* `wget -O - -q --no-check-certificate https://raw.github.com/webinv/ssl-local/master/local.key > local.key` - local.key
+* `wget -O - -q --no-check-certificate https://raw.github.com/webinv/ssl-local/master/local.pem > local.pem` - local.pem
+* `wget -O - -q --no-check-certificate https://raw.github.com/webinv/ssl-local/master/local-ca.crt > local-ca.crt` - local-ca.crt
